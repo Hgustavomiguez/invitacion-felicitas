@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bautismo de Felicitas</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'olive-green': '#6B8E23',
+                        'pearl-grey': '#E5E4E2',
+                        'pearl-dark': '#9CA3AF',
+                    },
+                    fontFamily: {
+                        'serif': ['"Cormorant Garamond"', 'serif'],
+                        'cursive': ['"Great Vibes"', 'cursive'],
+                        'sans': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Oculta el scroll principal, el scroll estará en el contenedor central */
+            background-color: #ffffff;
+        }
+
+        .nombre-protagonista {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5.5rem;
+            color: #6B8E23;
+            line-height: 1.1;
+            font-weight: normal;
+        }
+
+        @media (min-width: 768px) {
+            .nombre-protagonista {
+                font-size: 8rem;
+            }
+        }
+
+        /* Estilo sutil para la barra de scroll */
+        .scroll-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        .scroll-container::-webkit-scrollbar-thumb {
+            background-color: #E5E4E2;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="h-[100dvh] w-full flex flex-col font-sans text-gray-800 selection:bg-olive-green selection:text-white">
+    
+    <!-- Contenedor Superior (Header Marco) -->
+    <div id="header-marco" class="h-[20vh] w-full shrink-0 relative bg-white z-20 shadow-sm">
+        <img 
+            src="./Fondo tarjeta bautismo.png" 
+            alt="Marco superior decorativo" 
+            class="w-full h-full object-contain object-top"
+        />
+    </div>
+
+    <!-- Área de Contenido (Blanco Puro con Scroll Independiente) -->
+    <div class="flex-1 overflow-y-auto bg-white px-6 py-10 flex flex-col items-center z-10 scroll-container">
+        
+        <!-- Header Section -->
+        <div class="flex flex-col items-center text-center w-full max-w-md mt-4">
+            <h2 class="font-serif text-2xl md:text-3xl text-gray-500 tracking-[0.2em] uppercase mb-2 font-medium">
+                Mi Bautismo
+            </h2>
+            <h1 class="nombre-protagonista mb-4">Felicitas</h1>
+            <p class="font-sans text-sm md:text-base text-gray-500 max-w-sm italic font-light leading-relaxed">
+                "En este día especial, la luz de Dios se encenderá en mi corazón para iluminar el camino de mi vida"
+            </p>
+        </div>
+
+        <!-- Countdown Section -->
+        <div class="mt-12 w-full max-w-md">
+            <div class="flex justify-center gap-4 md:gap-8">
+                <div class="flex flex-col items-center">
+                    <span id="days" class="text-3xl md:text-4xl font-serif font-light text-olive-green mb-1">00</span>
+                    <span class="text-[10px] md:text-xs uppercase tracking-widest text-gray-400 font-sans">Días</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span id="hours" class="text-3xl md:text-4xl font-serif font-light text-olive-green mb-1">00</span>
+                    <span class="text-[10px] md:text-xs uppercase tracking-widest text-gray-400 font-sans">Hs</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span id="minutes" class="text-3xl md:text-4xl font-serif font-light text-olive-green mb-1">00</span>
+                    <span class="text-[10px] md:text-xs uppercase tracking-widest text-gray-400 font-sans">Min</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span id="seconds" class="text-3xl md:text-4xl font-serif font-light text-olive-green mb-1">00</span>
+                    <span class="text-[10px] md:text-xs uppercase tracking-widest text-gray-400 font-sans">Seg</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Event Details Section -->
+        <div class="mt-14 flex flex-col items-center space-y-8 w-full max-w-md">
+            <div class="flex flex-col items-center text-center">
+                <!-- Icono Calendario -->
+                <svg class="text-olive-green mb-2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <h3 class="text-base md:text-lg font-medium text-gray-800 uppercase tracking-wider">Domingo 19 de Abril</h3>
+            </div>
+            
+            <div class="w-8 h-[1px] bg-pearl-grey"></div>
+            
+            <div class="flex flex-col items-center text-center">
+                <!-- Icono Reloj -->
+                <svg class="text-olive-green mb-2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <h3 class="text-base md:text-lg font-medium text-gray-800 uppercase tracking-wider">10:00 hs</h3>
+            </div>
+            
+            <div class="w-8 h-[1px] bg-pearl-grey"></div>
+            
+            <div class="flex flex-col items-center text-center">
+                <!-- Icono Mapa -->
+                <svg class="text-olive-green mb-2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <h3 class="text-base md:text-lg font-medium text-gray-800 uppercase tracking-wider mb-1">Iglesia Don Orione</h3>
+                <p class="text-xs md:text-sm text-gray-500 font-light">Godoy Cruz, Mendoza</p>
+            </div>
+            
+            <button 
+                onclick="window.open('https://maps.google.com/?q=Iglesia+Don+Orione,+Godoy+Cruz,+Mendoza', '_blank')"
+                class="mt-4 w-full py-3.5 px-6 bg-olive-green hover:bg-[#556B2F] text-white rounded-xl font-sans font-medium tracking-wide transition-colors duration-300 flex items-center justify-center gap-2 shadow-md"
+            >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Ver Mapa
+            </button>
+        </div>
+
+        <!-- RSVP Section -->
+        <div class="mt-16 w-full max-w-md text-center mb-8">
+            <h2 class="font-serif text-2xl text-gray-800 mb-3">¡Te esperamos!</h2>
+            <p class="font-sans text-sm text-gray-500 font-light mb-6">
+                Por favor, confirmanos tu asistencia.
+            </p>
+            
+            <button 
+                onclick="window.open('https://wa.me/?text=' + encodeURIComponent('¡Hola! Confirmo mi asistencia al bautismo de Felicitas'), '_blank')"
+                class="w-full py-3.5 px-6 bg-olive-green hover:bg-[#556B2F] text-white rounded-xl font-sans font-medium tracking-wide transition-colors duration-300 flex items-center justify-center gap-2 shadow-md"
+            >
+                <!-- Icono Mensaje -->
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                Confirmar Asistencia
+            </button>
+        </div>
+        
+    </div>
+
+    <!-- Contenedor Inferior (Footer Marco) -->
+    <div id="footer-marco" class="h-[15vh] w-full shrink-0 relative bg-white z-20 shadow-[0_-1px_3px_rgba(0,0,0,0.05)]">
+        <img 
+            src="./Fondo tarjeta bautismo.png" 
+            alt="Marco inferior decorativo" 
+            class="w-full h-full object-contain object-bottom"
+        />
+    </div>
+
+    <!-- Lógica de Cuenta Regresiva -->
+    <script>
+        const targetDate = new Date('2026-04-19T10:00:00').getTime();
+
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById('days').innerText = '00';
+                document.getElementById('hours').innerText = '00';
+                document.getElementById('minutes').innerText = '00';
+                document.getElementById('seconds').innerText = '00';
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+        };
+
+        // Actualizar cada segundo
+        setInterval(updateCountdown, 1000);
+        // Llamada inicial
+        updateCountdown();
+    </script>
+</body>
+</html>
