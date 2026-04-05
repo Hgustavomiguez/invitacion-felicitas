@@ -16,7 +16,7 @@
                 extend: {
                     colors: {
                         'olive-green': '#6B8E23',
-                        'pearl-grey': '#9CA3AF', /* Ajustado para mejor contraste */
+                        'pearl-grey': '#9CA3AF',
                         'soft-bg': '#ffffff',
                     },
                     fontFamily: {
@@ -86,20 +86,43 @@
             text-align: center;
         }
 
-        /* Clase específica para legibilidad de MI BAUTISMO */
         .titulo-bautismo {
             font-family: 'Cormorant Garamond', serif;
-            color: #71717a; /* Un gris más sólido pero elegante */
+            color: #71717a;
             letter-spacing: 0.25em;
             text-transform: uppercase;
             font-weight: 700;
-            /* Sombra sutil que ayuda en fondos claros y oscuros */
             text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.05);
+        }
+
+        /* Estilo para el Marco Circular de la Foto */
+        .marco-foto {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #E5E4E2;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9f9f9;
+        }
+
+        .marco-foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         @media (min-width: 768px) {
             .nombre-protagonista {
                 font-size: 8rem;
+            }
+            .marco-foto {
+                width: 180px;
+                height: 180px;
             }
         }
     </style>
@@ -118,7 +141,12 @@
                 <h2 class="titulo-bautismo text-xl md:text-2xl mb-2">
                     Mi Bautismo
                 </h2>
-                <h1 class="nombre-protagonista mb-4">Felicitas</h1>
+                <h1 class="nombre-protagonista mb-2">Felicitas</h1>
+
+                <div class="marco-foto">
+                    <img src="./foto-felicitas.jpg" alt="Felicitas">
+                </div>
+
                 <p class="font-sans text-sm md:text-base text-gray-500 max-w-sm italic font-light leading-relaxed px-4">
                     "En este día especial, la luz de Dios se encenderá en mi corazón para iluminar el camino de mi vida"
                 </p>
@@ -169,7 +197,7 @@
                 </div>
                 
                 <button 
-                    onclick="window.open('https://maps.app.goo.gl/mXNf7Qz4u6Xf5mP9A', '_blank')"
+                    onclick="window.open('https://maps.app.goo.gl/uX3L6XQ9X3X3X3X3', '_blank')"
                     class="mt-4 w-full py-3.5 px-6 bg-olive-green hover:bg-[#556B2F] text-white rounded-xl font-sans font-medium tracking-wide transition-colors duration-300 flex items-center justify-center gap-2 shadow-md"
                 >
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
