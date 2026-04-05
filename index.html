@@ -19,7 +19,6 @@
                     colors: {
                         'olive-green': '#6B8E23',
                         'pearl-grey': '#E5E4E2',
-                        'pearl-dark': '#9CA3AF',
                     },
                     fontFamily: {
                         'serif': ['"Cormorant Garamond"', 'serif'],
@@ -36,8 +35,64 @@
         body {
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Oculta el scroll principal, el scroll estará en el contenedor central */
             background-color: #ffffff;
+            /* Prevenir scroll horizontal */
+            overflow-x: hidden;
+        }
+
+        /* Marcos Fijos */
+        .marco-superior {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 25vh; /* Altura del marco superior */
+            z-index: 50;
+            pointer-events: none; /* Permite hacer clic a través de la imagen si es necesario */
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(to bottom, rgba(255,255,255,1) 40%, rgba(255,255,255,0) 100%);
+        }
+
+        .marco-superior img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            object-position: top center;
+        }
+
+        .marco-inferior {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20vh; /* Altura del marco inferior */
+            z-index: 50;
+            pointer-events: none;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            background: linear-gradient(to top, rgba(255,255,255,1) 30%, rgba(255,255,255,0) 100%);
+        }
+
+        .marco-inferior img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            object-position: bottom center;
+        }
+
+        /* Contenedor de Scroll Central */
+        .contenido-scroll {
+            position: relative;
+            z-index: 10;
+            /* El padding asegura que el contenido no quede oculto permanentemente detrás de los marcos */
+            padding-top: 28vh; 
+            padding-bottom: 25vh;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .nombre-protagonista {
@@ -46,6 +101,7 @@
             color: #6B8E23;
             line-height: 1.1;
             font-weight: normal;
+            text-align: center;
         }
 
         @media (min-width: 768px) {
@@ -53,34 +109,27 @@
                 font-size: 8rem;
             }
         }
-
-        /* Estilo sutil para la barra de scroll */
-        .scroll-container::-webkit-scrollbar {
-            width: 6px;
-        }
-        .scroll-container::-webkit-scrollbar-thumb {
-            background-color: #E5E4E2;
-            border-radius: 10px;
-        }
     </style>
 </head>
-<body class="h-[100dvh] w-full flex flex-col font-sans text-gray-800 selection:bg-olive-green selection:text-white">
+<body class="font-sans text-gray-800 selection:bg-olive-green selection:text-white">
     
-    <!-- Contenedor Superior (Header Marco) -->
-    <div id="header-marco" class="h-[20vh] w-full shrink-0 relative bg-white z-20 shadow-sm">
-        <img 
-            src="./Fondo tarjeta bautismo.png" 
-            alt="Marco superior decorativo" 
-            class="w-full h-full object-contain object-top"
-        />
+    <!-- Marco Superior Fijo -->
+    <div class="marco-superior">
+        <img src="./Niño - Bautismo.jpg" alt="Decoración Superior">
     </div>
 
-    <!-- Área de Contenido (Blanco Puro con Scroll Independiente) -->
-    <div class="flex-1 overflow-y-auto bg-white px-6 py-10 flex flex-col items-center z-10 scroll-container">
+    <!-- Marco Inferior Fijo -->
+    <div class="marco-inferior">
+        <img src="./Hojas - Bautismo.jpg" alt="Decoración Inferior">
+    </div>
+
+    <!-- Área de Contenido Central (Scrollable) -->
+    <div class="contenido-scroll px-6">
         
         <!-- Header Section -->
-        <div class="flex flex-col items-center text-center w-full max-w-md mt-4">
-            <h2 class="font-serif text-2xl md:text-3xl text-gray-500 tracking-[0.2em] uppercase mb-2 font-medium">
+        <div class="flex flex-col items-center text-center w-full max-w-md">
+            <!-- Título con sombra sutil para asegurar legibilidad del Gris Perla sobre blanco -->
+            <h2 class="font-serif text-2xl md:text-3xl text-pearl-grey tracking-[0.2em] uppercase mb-2 font-bold" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">
                 Mi Bautismo
             </h2>
             <h1 class="nombre-protagonista mb-4">Felicitas</h1>
@@ -132,12 +181,12 @@
             <div class="flex flex-col items-center text-center">
                 <!-- Icono Mapa -->
                 <svg class="text-olive-green mb-2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                <h3 class="text-base md:text-lg font-medium text-gray-800 uppercase tracking-wider mb-1">Iglesia Don Orione</h3>
-                <p class="text-xs md:text-sm text-gray-500 font-light">Godoy Cruz, Mendoza</p>
+                <h3 class="text-base md:text-lg font-medium text-gray-800 uppercase tracking-wider mb-1">Parroquia Nuestra Señora del Carmen</h3>
+                <p class="text-xs md:text-sm text-gray-500 font-light">Paso de los Andes 1998, M5547 Godoy Cruz, Mendoza</p>
             </div>
             
             <button 
-                onclick="window.open('https://maps.google.com/?q=Iglesia+Don+Orione,+Godoy+Cruz,+Mendoza', '_blank')"
+                onclick="window.open('https://maps.google.com/?q=Parroquia+Nuestra+Señora+del+Carmen,+Paso+de+los+Andes+1998,+Godoy+Cruz,+Mendoza', '_blank')"
                 class="mt-4 w-full py-3.5 px-6 bg-olive-green hover:bg-[#556B2F] text-white rounded-xl font-sans font-medium tracking-wide transition-colors duration-300 flex items-center justify-center gap-2 shadow-md"
             >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -153,7 +202,7 @@
             </p>
             
             <button 
-                onclick="window.open('https://wa.me/?text=' + encodeURIComponent('¡Hola! Confirmo mi asistencia al bautismo de Felicitas'), '_blank')"
+                onclick="window.open('https://wa.me/5492616820433?text=' + encodeURIComponent('¡Hola! Confirmo mi asistencia al bautismo de Felicitas'), '_blank')"
                 class="w-full py-3.5 px-6 bg-olive-green hover:bg-[#556B2F] text-white rounded-xl font-sans font-medium tracking-wide transition-colors duration-300 flex items-center justify-center gap-2 shadow-md"
             >
                 <!-- Icono Mensaje -->
@@ -164,17 +213,9 @@
         
     </div>
 
-    <!-- Contenedor Inferior (Footer Marco) -->
-    <div id="footer-marco" class="h-[15vh] w-full shrink-0 relative bg-white z-20 shadow-[0_-1px_3px_rgba(0,0,0,0.05)]">
-        <img 
-            src="./Fondo tarjeta bautismo.png" 
-            alt="Marco inferior decorativo" 
-            class="w-full h-full object-contain object-bottom"
-        />
-    </div>
-
     <!-- Lógica de Cuenta Regresiva -->
     <script>
+        // Fecha objetivo: Domingo 19 de Abril de 2026 a las 10:00 hs
         const targetDate = new Date('2026-04-19T10:00:00').getTime();
 
         const updateCountdown = () => {
